@@ -7,25 +7,28 @@
 //
 
 import UIKit
+protocol TableCellDelegate {
+    func didTapOption(optionIndex : Int)
+}
 
 class TableViewCell: UITableViewCell {
+    
+    var optionIndex : Int?
+    
+    var delegate : TableCellDelegate?
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     @IBOutlet weak var optionButtonOutlet: UIButton!
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+   
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        delegate?.didTapOption(optionIndex: self.optionIndex!)
     }
     
-    func setOption (optionText : String)
+    func setOption (optionText : String , optionIndex : Int)
         
     {
-optionButtonOutlet.setTitle(optionText,for: .normal)
+        self.optionButtonOutlet.setTitle(optionText,for: .normal)
+        self.optionIndex = optionIndex
     }
 
 }

@@ -47,6 +47,9 @@
                                                         <constraint firstAttribute="height" constant="90" id="JIJ-mC-hAM"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="buttonTapped:" destination="aLF-vP-yYm" eventType="touchUpInside" id="5eO-pZ-K4J"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -68,6 +71,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92e-dg-VgS">
                                 <rect key="frame" x="0.0" y="742" width="414" height="30"/>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lmK-9o-2I4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

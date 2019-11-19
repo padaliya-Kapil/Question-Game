@@ -21,13 +21,16 @@ struct Question
     }
 }
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource , TableCellDelegate {
+   
+    
     
     
     
     var questionsArray : [Question] = []
     var questionNumber = 0
     var currentQuestion : Question?
+    var answerChosenForCurrentQuestion : Int?
     var selected5Questions : [Question] = []
     
     @IBOutlet weak var currentQuestionLabel: UILabel!
@@ -59,6 +62,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         for _ in 1...5
         {
             self.selected5Questions.append(self.questionsArray.randomElement()!)
+        }
+    }
+    
+    
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+        self.updateUI()
+    }
+    
+    func updateUI()
+    {
+DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
+                   + .milliseconds(800)) {
+        print("ButtonPressed")
+        self.optionsTableView.reloadData()
+        print("Data reloaded")
         }
     }
     
@@ -112,10 +131,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier:  "tableCell") as! TableViewCell
         
-        cell.setOption(optionText: (self.currentQuestion?.options[indexPath.row])!)
+        cell.setOption(optionText: (self.currentQuestion?.options[indexPath.row])!, optionIndex: indexPath.row)
+        
+        cell.delegate = self
         print(cell)
         return cell
     }
+    
+    func didTapOption(optionIndex: Int) {
+    self.answerChosenForCurrentQuestion = optionIndex
+        print(optionIndex)
+       }
 
 
 }
