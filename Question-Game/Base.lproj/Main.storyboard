@@ -34,17 +34,17 @@
                                 <rect key="frame" x="30" y="278" width="354" height="292"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="90" id="aLF-vP-yYm" customClass="TableViewCell" customModule="Question_Game" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="354" height="90"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="60" id="aLF-vP-yYm" customClass="TableViewCell" customModule="Question_Game" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="354" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aLF-vP-yYm" id="JLH-WK-kbq">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk2-wZ-sYP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="90"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="90" id="JIJ-mC-hAM"/>
+                                                        <constraint firstAttribute="height" constant="60" id="eeo-g7-6Kb"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <connections>
@@ -53,10 +53,9 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Xk2-wZ-sYP" firstAttribute="leading" secondItem="JLH-WK-kbq" secondAttribute="leading" id="4Jy-JL-eqe"/>
-                                                <constraint firstAttribute="trailing" secondItem="Xk2-wZ-sYP" secondAttribute="trailing" id="AHK-lc-qlM"/>
-                                                <constraint firstItem="Xk2-wZ-sYP" firstAttribute="top" secondItem="JLH-WK-kbq" secondAttribute="top" id="EKo-zV-W84"/>
-                                                <constraint firstAttribute="bottom" secondItem="Xk2-wZ-sYP" secondAttribute="bottom" id="HCg-eW-aXJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xk2-wZ-sYP" secondAttribute="trailing" id="9IW-df-7h4"/>
+                                                <constraint firstItem="Xk2-wZ-sYP" firstAttribute="leading" secondItem="JLH-WK-kbq" secondAttribute="leading" id="k0I-Ve-25P"/>
+                                                <constraint firstItem="Xk2-wZ-sYP" firstAttribute="top" secondItem="JLH-WK-kbq" secondAttribute="top" id="zuU-i6-CBS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -101,6 +100,7 @@
                     <connections>
                         <outlet property="currentQuestionLabel" destination="bND-20-NpI" id="kud-E2-Tp9"/>
                         <outlet property="optionsTableView" destination="xw5-6v-0ja" id="Gng-LX-NV5"/>
+                        <outlet property="progressView" destination="P99-W6-UV3" id="N6p-aD-pdO"/>
                         <outlet property="questionNumberLabel" destination="Y8w-Db-4cI" id="L6Y-cN-qrj"/>
                     </connections>
                 </viewController>

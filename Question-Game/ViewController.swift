@@ -22,7 +22,8 @@ struct Question
 }
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource , TableCellDelegate {
-   
+    @IBOutlet weak var progressView: UIProgressView!
+    
     
     
     
@@ -50,6 +51,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
         
+        progressView.progress = 1/5.0
+        
     }
     
     
@@ -62,8 +65,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             {
                 self.currentQuestion =  self.questionsArray.randomElement()
                 self.updateUI()
+                self.questionNumber += 1
                 let timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
-                           print("")
+                        
                        }
                 
             }else
@@ -82,9 +86,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func updateUI()
     {
-        print("ButtonPressed")
+     
+        self.progressView.progress = Float(self.questionNumber+2)/5.0
         self.optionsTableView.reloadData()
-        print("Data reloaded")
+     
         self.someThingSeletced = false
 //    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
 //                   + .milliseconds(800)) {
@@ -145,7 +150,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.setOption(optionText: (self.currentQuestion?.options[indexPath.row])!, optionIndex: indexPath.row)
         
         cell.delegate = self
-        print(cell)
+//        print(cell)
         
         self.questionNumberLabel.text = "Question \(self.questionNumber + 1)"
         
@@ -156,7 +161,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func didTapOption(optionIndex: Int) {
     self.answerChosenForCurrentQuestion = optionIndex
         self.someThingSeletced = true
-        print(optionIndex)
+//        print(optionIndex)
        }
 
 
