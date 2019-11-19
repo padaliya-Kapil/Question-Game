@@ -70,7 +70,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 self.performSegue(withIdentifier: "goToResult", sender: self)
                 
                 self.questionNumber = 0
-                self.progressView.progress = 1 / 5.0
                 self.scoreTracker = [:]
                 self.score = 0
                 updateUI()
@@ -87,6 +86,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func updateUI()
     {
+        print(self.questionNumber)
+        
         self.progressView.progress = Float(self.questionNumber+2)/5.0
         self.optionsTableView.reloadData()
         self.someThingSeletced = false
