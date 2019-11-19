@@ -21,20 +21,44 @@ struct Question
     }
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    
     
     var questionsArray : [Question] = []
-
+    var questionNumber = 0
+    var currentQuestion : Question?
+    var selected5Questions : [Question] = []
+    
+    @IBOutlet weak var questionNumberLabel: UILabel!
+    
+    @IBOutlet weak var optionsTableView: UITableView!
+    
+    //initial setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        //get data from plist
+        self.questionsArray = preLoadFromPlist(forResource: "sheetData", ofType: "plist")
         
-        questionsArray = preLoadFromPlist(forResource: "sheetData", ofType: "plist")
+
+        self.set5SelectedQuestions()
         
-        for item in questionsArray
+        print(selected5Questions)
+        
+        self.currentQuestion = self.selected5Questions[0]
+       
+        optionsTableView.delegate = self
+        optionsTableView.dataSource = self
+        
+    }
+    
+    // set 5 randomQuestions
+    func set5SelectedQuestions()
+    {
+        for _ in 1...5
         {
-            print(item)
+            self.selected5Questions.append(self.questionsArray.randomElement()!)
         }
-        
     }
     
     
@@ -77,6 +101,19 @@ class ViewController: UIViewController {
          }
          return localArray
      }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (self.currentQuestion?.options.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        self.questionNumberLabel.text = "Question Change it"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier:  "tableCell") as! TableViewCell
+        
+        cell.setOption(optionText: (self.currentQuestion?.options[indexPath.row])!)
+        print(cell)
+        return cell
+    }
 
 
 }

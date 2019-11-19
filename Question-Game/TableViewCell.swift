@@ -15,10 +15,17 @@ class TableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var optionButtonOutlet: UIButton!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setOption (optionText : String)
+        
+    {
+optionButtonOutlet.setTitle(optionText,for: .normal)
     }
 
 }
