@@ -149,6 +149,9 @@
                                 <state key="normal" title="Try Again!!">
                                     <color key="titleColor" name="textColor2"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetButton:" destination="aoQ-7c-7rn" eventType="touchUpInside" id="wgc-uM-lYE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="homScreenBack"/>
@@ -165,6 +168,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ptm-7y-te5"/>
                     </view>
+                    <connections>
+                        <outlet property="ResultextOutlet" destination="6kU-7H-m9I" id="tIT-rz-3k7"/>
+                        <outlet property="scoreOutlet" destination="5B4-U5-kJh" id="dbf-KH-eLE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hct-2b-Wyr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

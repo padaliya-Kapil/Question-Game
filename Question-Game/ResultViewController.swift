@@ -9,18 +9,35 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-
+    
+    @IBOutlet weak var scoreOutlet: UILabel!
+    
+    
+    
+    
+    @IBOutlet weak var ResultextOutlet: UILabel!
     var score : Double?
+    
+    func calculateStars() -> String
+    {
+        var outString = ""
+        for _ in 1...Int(self.score!)
+        {
+            outString = outString + "⭐"
+        }
+        return outString
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getLabelText(score: self.score!)
+        self.scoreOutlet.text = calculateStars()
+        self.ResultextOutlet.text = getLabelText()
+        
         print(score)
     }
     
-    func getLabelText(score : Double) -> String
+    func getLabelText() -> String
     {
-        switch score {
+        switch self.score! {
         case 0...2:
             return "Please try Again"
         case 3:
@@ -29,10 +46,12 @@ class ResultViewController: UIViewController {
             return "Excellent work!"
         default:
             return "You are a genius!"
-                
         }
+        
     }
     
-
-
+    @IBAction func resetButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

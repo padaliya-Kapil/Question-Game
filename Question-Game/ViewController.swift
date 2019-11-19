@@ -49,7 +49,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         self.currentQuestion = questionsArray.randomElement()
-       
+        
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
         
@@ -69,13 +69,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 self.updateUI()
                 self.questionNumber += 1
                 let timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
-                        
-                       }
+                    
+                }
                 
             }else
             {
-                print("performSegue")
+                
                 self.performSegue(withIdentifier: "goToResult", sender: self)
+                self.questionNumber = 0
+                self.currentQuestion = nil
+                self.answerChosenForCurrentQuestion  = 0
+                self.someThingSeletced = false
+                
+                self.score = 0.0
             }
             
         }else
@@ -89,63 +95,63 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func updateUI()
     {
-     
+        
         self.progressView.progress = Float(self.questionNumber+2)/5.0
         self.optionsTableView.reloadData()
-     
+        
         self.someThingSeletced = false
-//    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
-//                   + .milliseconds(800)) {
-//
-//        }
+        //    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
+        //                   + .milliseconds(800)) {
+        //
+        //        }
     }
     
     
     // pre-load data from plist for Books
-     func preLoadFromPlist(forResource: String, ofType: String) -> [Question] {
-         var preLoadcounter : Int = 0
-         var localArray : [Question] = []
-         
-         // mak path from Plist File
-         if let path = Bundle.main.path(forResource: forResource, ofType: ofType),
-             
-             // get dictionay via path
-             let myDict = NSDictionary(contentsOfFile: path){
-             
-             //now start to Use myDict here
-             //print(myDict["locations"])
-             for (key, value) in (myDict["questions"] as? [String:Any])! {
-                 //print("For: \(key) ::")
-                 
-                 // here we are expecting LocationName , lat and lon
-                 var oneQuestion : Question = Question()
-                 for (locKey, locVal) in (value as? [String:Any])! {
-                     //print("Key: \(locKey) - Value: \(locVal)")
-                     switch locKey {
-                         case "question":
-                             oneQuestion.question = locVal as! String
-                         case "options":
-                             oneQuestion.options = locVal as! [String]
-                         case "description":
-                             oneQuestion.answerKey = locVal as! Int
-                         default :
-                            print("Not cool ")
-                     }
-                 }
-                 // add conter in case of sucssesful save
-                 preLoadcounter += 1
-                 //print(oneBook)
-                 localArray.append(oneQuestion)
-             }
-         }
-         return localArray
-     }
+    func preLoadFromPlist(forResource: String, ofType: String) -> [Question] {
+        var preLoadcounter : Int = 0
+        var localArray : [Question] = []
+        
+        // mak path from Plist File
+        if let path = Bundle.main.path(forResource: forResource, ofType: ofType),
+            
+            // get dictionay via path
+            let myDict = NSDictionary(contentsOfFile: path){
+            
+            //now start to Use myDict here
+            //print(myDict["locations"])
+            for (key, value) in (myDict["questions"] as? [String:Any])! {
+                //print("For: \(key) ::")
+                
+                // here we are expecting LocationName , lat and lon
+                var oneQuestion : Question = Question()
+                for (locKey, locVal) in (value as? [String:Any])! {
+                    //print("Key: \(locKey) - Value: \(locVal)")
+                    switch locKey {
+                    case "question":
+                        oneQuestion.question = locVal as! String
+                    case "options":
+                        oneQuestion.options = locVal as! [String]
+                    case "description":
+                        oneQuestion.answerKey = locVal as! Int
+                    default :
+                        print("Not cool ")
+                    }
+                }
+                // add conter in case of sucssesful save
+                preLoadcounter += 1
+                //print(oneBook)
+                localArray.append(oneQuestion)
+            }
+        }
+        return localArray
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (self.currentQuestion?.options.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier:  "tableCell") as! TableViewCell
@@ -153,7 +159,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.setOption(optionText: (self.currentQuestion?.options[indexPath.row])!, optionIndex: indexPath.row)
         
         cell.delegate = self
-//        print(cell)
+        //        print(cell)
         
         self.questionNumberLabel.text = "Question \(self.questionNumber + 1)"
         
@@ -162,25 +168,25 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func didTapOption(optionIndex: Int) {
-    self.answerChosenForCurrentQuestion = optionIndex
+        self.answerChosenForCurrentQuestion = optionIndex
         self.someThingSeletced = true
-//        print(optionIndex)
+        //        print(optionIndex)
         
         if(self.answerChosenForCurrentQuestion == self.currentQuestion?.answerKey)
         {
             score += 1
         }
-       }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "goToResult"
-                 {
-                     print("Going to Results")
-                     let segueDestination = segue.destination as! ResultViewController
-                    segueDestination.score = self.score
-                 }
-       }
-
-
+        if segue.identifier == "goToResult"
+        {
+            print("Going to Results")
+            let segueDestination = segue.destination as! ResultViewController
+            segueDestination.score = self.score
+        }
+    }
+    
+    
 }
 
