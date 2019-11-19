@@ -21,7 +21,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bND-20-NpI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who won a gold medal for Spain in cycling in the 1992 Olympics?" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bND-20-NpI">
                                 <rect key="frame" x="30" y="178" width="354" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="qxX-3o-Yy1"/>
@@ -31,18 +31,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xw5-6v-0ja">
-                                <rect key="frame" x="30" y="278" width="354" height="292"/>
+                                <rect key="frame" x="32" y="328" width="350" height="240"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="NHj-5W-cnW"/>
+                                    <constraint firstAttribute="height" constant="240" id="ySM-Bk-56R"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="60" id="aLF-vP-yYm" customClass="TableViewCell" customModule="Question_Game" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="354" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="350" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aLF-vP-yYm" id="JLH-WK-kbq">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk2-wZ-sYP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="eeo-g7-6Kb"/>
                                                     </constraints>
@@ -65,10 +69,14 @@
                                 </prototypes>
                             </tableView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P99-W6-UV3">
-                                <rect key="frame" x="50" y="830" width="314" height="2"/>
+                                <rect key="frame" x="50" y="658" width="314" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="bEJ-QJ-EDl"/>
+                                </constraints>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92e-dg-VgS">
-                                <rect key="frame" x="0.0" y="742" width="414" height="30"/>
+                                <rect key="frame" x="50" y="598" width="314" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lmK-9o-2I4"/>
@@ -77,22 +85,19 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="P99-W6-UV3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1eK-er-uQa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="P99-W6-UV3" secondAttribute="trailing" constant="30" id="3KI-ba-wRp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="92e-dg-VgS" secondAttribute="trailing" constant="50" id="4Fc-TM-LaF"/>
                             <constraint firstItem="Y8w-Db-4cI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="FHT-49-fRS"/>
+                            <constraint firstItem="P99-W6-UV3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="HDv-XQ-Pif"/>
                             <constraint firstItem="bND-20-NpI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="JRG-Gr-BFa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P99-W6-UV3" secondAttribute="trailing" constant="30" id="JwZ-aV-Ly2"/>
                             <constraint firstItem="bND-20-NpI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Kbi-mX-yMP"/>
-                            <constraint firstItem="P99-W6-UV3" firstAttribute="top" secondItem="xw5-6v-0ja" secondAttribute="bottom" constant="260" id="ON4-n5-uEL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P99-W6-UV3" secondAttribute="bottom" constant="30" id="Osg-Ly-nGT"/>
-                            <constraint firstItem="P99-W6-UV3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="PK9-JC-3sh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bND-20-NpI" secondAttribute="trailing" constant="30" id="QUA-fX-8x8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xw5-6v-0ja" secondAttribute="trailing" constant="30" id="dWr-5K-1mY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="92e-dg-VgS" secondAttribute="bottom" constant="90" id="dbM-dh-kno"/>
+                            <constraint firstItem="92e-dg-VgS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Uwg-WF-4VH"/>
+                            <constraint firstItem="xw5-6v-0ja" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aye-So-CCM"/>
+                            <constraint firstItem="92e-dg-VgS" firstAttribute="top" secondItem="xw5-6v-0ja" secondAttribute="bottom" constant="30" id="djN-YH-hZK"/>
                             <constraint firstItem="Y8w-Db-4cI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="lIq-oR-REd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="92e-dg-VgS" secondAttribute="trailing" id="nuo-R5-OJp"/>
-                            <constraint firstItem="xw5-6v-0ja" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="riw-Ir-O71"/>
-                            <constraint firstItem="92e-dg-VgS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uK9-fc-Atl"/>
-                            <constraint firstItem="xw5-6v-0ja" firstAttribute="top" secondItem="bND-20-NpI" secondAttribute="bottom" constant="40" id="z6f-EW-5st"/>
+                            <constraint firstItem="xw5-6v-0ja" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="p5t-mo-80z"/>
+                            <constraint firstItem="P99-W6-UV3" firstAttribute="top" secondItem="xw5-6v-0ja" secondAttribute="bottom" constant="90" id="qgU-Ib-xA8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
