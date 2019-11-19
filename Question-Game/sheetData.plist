@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>questions</key>
+	<dict>
+		<key>New item</key>
+		<dict>
+			<key>answerKey</key>
+			<string></string>
+			<key>options</key>
+			<array>
+				<string>Option1</string>
+				<string>Option2</string>
+				<string>Option3</string>
+				<string>Option4</string>
+			</array>
+			<key>question</key>
+			<string></string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -13,6 +13,7 @@
 		C9706EAC23837C4F003ED8DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9706EAA23837C4F003ED8DA /* Main.storyboard */; };
 		C9706EAE23837C50003ED8DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9706EAD23837C50003ED8DA /* Assets.xcassets */; };
 		C9706EB123837C50003ED8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9706EAF23837C50003ED8DA /* LaunchScreen.storyboard */; };
+		C9706EB923837DA9003ED8DA /* sheetData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9706EB823837DA9003ED8DA /* sheetData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C9706EAD23837C50003ED8DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9706EB023837C50003ED8DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9706EB223837C50003ED8DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9706EB823837DA9003ED8DA /* sheetData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = sheetData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				C9706EAD23837C50003ED8DA /* Assets.xcassets */,
 				C9706EAF23837C50003ED8DA /* LaunchScreen.storyboard */,
 				C9706EB223837C50003ED8DA /* Info.plist */,
+				C9706EB823837DA9003ED8DA /* sheetData.plist */,
 			);
 			path = "Question-Game";
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9706EB923837DA9003ED8DA /* sheetData.plist in Resources */,
 				C9706EB123837C50003ED8DA /* LaunchScreen.storyboard in Resources */,
 				C9706EAE23837C50003ED8DA /* Assets.xcassets in Resources */,
 				C9706EAC23837C4F003ED8DA /* Main.storyboard in Resources */,
