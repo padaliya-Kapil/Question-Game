@@ -34,6 +34,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var answerChosenForCurrentQuestion : Int?
     var someThingSeletced : Bool = false
     
+    var score = 0.0
+    
     @IBOutlet weak var currentQuestionLabel: UILabel!
     @IBOutlet weak var questionNumberLabel: UILabel!
     
@@ -73,6 +75,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             }else
             {
                 print("performSegue")
+                self.performSegue(withIdentifier: "goToResult", sender: self)
             }
             
         }else
@@ -162,6 +165,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     self.answerChosenForCurrentQuestion = optionIndex
         self.someThingSeletced = true
 //        print(optionIndex)
+        
+        if(self.answerChosenForCurrentQuestion == self.currentQuestion?.answerKey)
+        {
+            score += 1
+        }
+       }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "goToResult"
+                 {
+                     print("Going to Results")
+                     let segueDestination = segue.destination as! ResultViewController
+                    segueDestination.score = self.score
+                 }
        }
 
 
