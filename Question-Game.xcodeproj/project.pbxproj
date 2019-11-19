@@ -14,6 +14,7 @@
 		C9706EAE23837C50003ED8DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9706EAD23837C50003ED8DA /* Assets.xcassets */; };
 		C9706EB123837C50003ED8DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9706EAF23837C50003ED8DA /* LaunchScreen.storyboard */; };
 		C9706EB923837DA9003ED8DA /* sheetData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9706EB823837DA9003ED8DA /* sheetData.plist */; };
+		C9706EBB2383859B003ED8DA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9706EBA2383859B003ED8DA /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		C9706EB023837C50003ED8DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9706EB223837C50003ED8DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9706EB823837DA9003ED8DA /* sheetData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = sheetData.plist; sourceTree = "<group>"; };
+		C9706EBA2383859B003ED8DA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				C9706EAF23837C50003ED8DA /* LaunchScreen.storyboard */,
 				C9706EB223837C50003ED8DA /* Info.plist */,
 				C9706EB823837DA9003ED8DA /* sheetData.plist */,
+				C9706EBA2383859B003ED8DA /* TableViewCell.swift */,
 			);
 			path = "Question-Game";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9706EA923837C4F003ED8DA /* ViewController.swift in Sources */,
+				C9706EBB2383859B003ED8DA /* TableViewCell.swift in Sources */,
 				C9706EA523837C4F003ED8DA /* AppDelegate.swift in Sources */,
 				C9706EA723837C4F003ED8DA /* SceneDelegate.swift in Sources */,
 			);

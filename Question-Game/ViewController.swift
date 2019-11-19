@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         {
             print(item)
         }
-        // Do any additional setup after loading the view.
+        
     }
     
     
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                  // here we are expecting LocationName , lat and lon
                  var oneQuestion : Question = Question()
                  for (locKey, locVal) in (value as? [String:Any])! {
-                     print("Key: \(locKey) - Value: \(locVal)")
+                     //print("Key: \(locKey) - Value: \(locVal)")
                      switch locKey {
                          case "question":
                              oneQuestion.question = locVal as! String
