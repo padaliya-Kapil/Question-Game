@@ -30,6 +30,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var currentQuestion : Question?
     var selected5Questions : [Question] = []
     
+    @IBOutlet weak var currentQuestionLabel: UILabel!
     @IBOutlet weak var questionNumberLabel: UILabel!
     
     @IBOutlet weak var optionsTableView: UITableView!
@@ -106,7 +107,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        self.questionNumberLabel.text = "Question Change it"
+        self.questionNumberLabel.text = "Question #CAl"
+        self.currentQuestionLabel.text = self.currentQuestion?.question
         
         let cell = tableView.dequeueReusableCell(withIdentifier:  "tableCell") as! TableViewCell
         
