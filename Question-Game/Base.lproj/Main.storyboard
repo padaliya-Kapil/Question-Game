@@ -3,11 +3,12 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Trivia Quiz-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Question_Game" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +19,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question #" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8w-Db-4cI">
                                 <rect key="frame" x="30" y="118.00000000000001" width="84" height="20.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="textColor2"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who won a gold medal for Spain in cycling in the 1992 Olympics?" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bND-20-NpI">
@@ -27,10 +28,10 @@
                                     <constraint firstAttribute="height" constant="60" id="qxX-3o-Yy1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="textColor1"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xw5-6v-0ja">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xw5-6v-0ja">
                                 <rect key="frame" x="32" y="328" width="350" height="240"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -50,7 +51,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="eeo-g7-6Kb"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" name="textColor2"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="buttonTapped:" destination="aLF-vP-yYm" eventType="touchUpInside" id="5eO-pZ-K4J"/>
                                                     </connections>
@@ -62,6 +65,7 @@
                                                 <constraint firstItem="Xk2-wZ-sYP" firstAttribute="top" secondItem="JLH-WK-kbq" secondAttribute="top" id="zuU-i6-CBS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="button2"/>
                                         <connections>
                                             <outlet property="optionButtonOutlet" destination="Xk2-wZ-sYP" id="ByS-8y-pNk"/>
                                         </connections>
@@ -70,20 +74,24 @@
                             </tableView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P99-W6-UV3">
                                 <rect key="frame" x="50" y="658" width="314" height="6"/>
+                                <color key="tintColor" name="textColor2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="6" id="bEJ-QJ-EDl"/>
                                 </constraints>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92e-dg-VgS">
                                 <rect key="frame" x="50" y="598" width="314" height="42"/>
+                                <color key="backgroundColor" name="buttonColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" name="textColor1"/>
+                                </state>
                                 <connections>
                                     <action selector="nextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lmK-9o-2I4"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="homScreenBack"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="92e-dg-VgS" secondAttribute="trailing" constant="50" id="4Fc-TM-LaF"/>
                             <constraint firstItem="Y8w-Db-4cI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="FHT-49-fRS"/>
@@ -101,7 +109,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ukT-Z3-Rpo"/>
+                    <navigationItem key="navigationItem" title="Trivia Quiz" id="ukT-Z3-Rpo"/>
                     <connections>
                         <outlet property="currentQuestionLabel" destination="bND-20-NpI" id="kud-E2-Tp9"/>
                         <outlet property="optionsTableView" destination="xw5-6v-0ja" id="Gng-LX-NV5"/>
@@ -121,7 +129,40 @@
                     <view key="view" contentMode="scaleToFill" id="N07-Tc-sj5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⭐⭐⭐⭐⭐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5B4-U5-kJh">
+                                <rect key="frame" x="30" y="200" width="354" height="70.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Luck Next Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kU-7H-m9I">
+                                <rect key="frame" x="30" y="330.66666666666669" width="354" height="33.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" name="textColor2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-Ob-1MP">
+                                <rect key="frame" x="70" y="414.33333333333331" width="274" height="42"/>
+                                <color key="backgroundColor" name="buttonColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Try Again!!">
+                                    <color key="titleColor" name="textColor2"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="homScreenBack"/>
+                        <constraints>
+                            <constraint firstItem="5B4-U5-kJh" firstAttribute="leading" secondItem="ptm-7y-te5" secondAttribute="leading" constant="30" id="5po-Rl-Hgf"/>
+                            <constraint firstItem="6kU-7H-m9I" firstAttribute="top" secondItem="5B4-U5-kJh" secondAttribute="bottom" constant="60" id="O7n-Fm-ARO"/>
+                            <constraint firstItem="ptm-7y-te5" firstAttribute="trailing" secondItem="i9a-Ob-1MP" secondAttribute="trailing" constant="70" id="Q8G-ys-tgI"/>
+                            <constraint firstItem="5B4-U5-kJh" firstAttribute="top" secondItem="ptm-7y-te5" secondAttribute="top" constant="200" id="Qcu-w3-Oe0"/>
+                            <constraint firstItem="ptm-7y-te5" firstAttribute="trailing" secondItem="6kU-7H-m9I" secondAttribute="trailing" constant="30" id="fb3-uH-avl"/>
+                            <constraint firstItem="ptm-7y-te5" firstAttribute="trailing" secondItem="5B4-U5-kJh" secondAttribute="trailing" constant="30" id="kb5-FO-byi"/>
+                            <constraint firstItem="6kU-7H-m9I" firstAttribute="leading" secondItem="ptm-7y-te5" secondAttribute="leading" constant="30" id="pCN-MM-eqb"/>
+                            <constraint firstItem="i9a-Ob-1MP" firstAttribute="top" secondItem="6kU-7H-m9I" secondAttribute="bottom" constant="50" id="w4K-6N-OmS"/>
+                            <constraint firstItem="i9a-Ob-1MP" firstAttribute="leading" secondItem="ptm-7y-te5" secondAttribute="leading" constant="70" id="zKI-Q2-ogO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ptm-7y-te5"/>
                     </view>
                 </viewController>
@@ -148,4 +189,21 @@
             <point key="canvasLocation" x="137.68115942028987" y="75"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="button2">
+            <color red="0.8666666666666667" green="0.71372549019607845" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonColor">
+            <color red="0.67450980390000004" green="0.55294117649999996" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="homScreenBack">
+            <color red="0.94509803920000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor1">
+            <color red="0.28235294119999998" green="0.29803921570000003" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor2">
+            <color red="0.38431372549999998" green="0.062745098040000002" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
