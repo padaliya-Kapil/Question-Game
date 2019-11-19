@@ -31,7 +31,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var questionNumber = 0
     var currentQuestion : Question?
     var answerChosenForCurrentQuestion : Int?
-    var selected5Questions : [Question] = []
+    var someThingSeletced : Bool = false
     
     @IBOutlet weak var currentQuestionLabel: UILabel!
     @IBOutlet weak var questionNumberLabel: UILabel!
@@ -44,41 +44,52 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //get data from plist
         self.questionsArray = preLoadFromPlist(forResource: "sheetData", ofType: "plist")
         
-
-        self.set5SelectedQuestions()
         
-        print(selected5Questions)
-        
-        self.currentQuestion = self.selected5Questions[0]
+        self.currentQuestion = questionsArray.randomElement()
        
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
         
     }
     
-    // set 5 randomQuestions
-    func set5SelectedQuestions()
-    {
-        for _ in 1...5
-        {
-            self.selected5Questions.append(self.questionsArray.randomElement()!)
-        }
-    }
     
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        if(self.someThingSeletced)
+        {
+            
+            if(self.questionNumber < 4)
+            {
+                self.currentQuestion =  self.questionsArray.randomElement()
+                self.updateUI()
+                let timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
+                           print("")
+                       }
+                
+            }else
+            {
+                print("performSegue")
+            }
+            
+        }else
+        {
+            print("Implement pop-up")
+        }
         
-        self.updateUI()
+        
+        
     }
     
     func updateUI()
     {
-DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
-                   + .milliseconds(800)) {
         print("ButtonPressed")
         self.optionsTableView.reloadData()
         print("Data reloaded")
-        }
+        self.someThingSeletced = false
+//    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
+//                   + .milliseconds(800)) {
+//
+//        }
     }
     
     
@@ -126,8 +137,8 @@ DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        self.questionNumberLabel.text = "Question #CAl"
-        self.currentQuestionLabel.text = self.currentQuestion?.question
+       
+        
         
         let cell = tableView.dequeueReusableCell(withIdentifier:  "tableCell") as! TableViewCell
         
@@ -135,11 +146,16 @@ DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
         
         cell.delegate = self
         print(cell)
+        
+        self.questionNumberLabel.text = "Question \(self.questionNumber + 1)"
+        
+        self.currentQuestionLabel.text = self.currentQuestion?.question
         return cell
     }
     
     func didTapOption(optionIndex: Int) {
     self.answerChosenForCurrentQuestion = optionIndex
+        self.someThingSeletced = true
         print(optionIndex)
        }
 
