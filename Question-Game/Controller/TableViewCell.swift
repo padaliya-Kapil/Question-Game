@@ -32,10 +32,11 @@ class TableViewCell: UITableViewCell {
        }
    
     @IBAction func buttonTapped(_ sender: UIButton) {
+        
         print(self.optionIndex ,"Option number of Index that we provide")
         print(self.question.answerKey,"this is from the question object")
         print(self.checkIfThisIsACorrectOption())
-        delegate?.didTapOption(correctOption: self.checkIfThisIsACorrectOption())
+            self.delegate?.didTapOption(correctOption: self.checkIfThisIsACorrectOption())
     }
     
     func setOption (optionText : String , optionIndex : Int)

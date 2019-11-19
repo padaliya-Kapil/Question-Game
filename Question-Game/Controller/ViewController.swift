@@ -69,6 +69,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 
                 self.performSegue(withIdentifier: "goToResult", sender: self)
                 
+                self.questionNumber = 0
+                self.progressView.progress = 1 / 5.0
+                self.scoreTracker = [:]
+                self.score = 0
+                updateUI()
+                
             }
             
         }else
@@ -81,7 +87,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func updateUI()
     {
-        
         self.progressView.progress = Float(self.questionNumber+2)/5.0
         self.optionsTableView.reloadData()
         self.someThingSeletced = false
@@ -159,7 +164,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         {
             print("Going to Results")
             let segueDestination = segue.destination as! ResultViewController
-            
             
             for (key,value) in self.scoreTracker
             {

@@ -21,6 +21,10 @@ class ResultViewController: UIViewController {
     func calculateStars() -> String
     {
         var outString = ""
+        if(self.score! == 0)
+        {
+            return "😔"
+        }
         for _ in 1...Int(self.score!)
         {
             outString = outString + "⭐"
