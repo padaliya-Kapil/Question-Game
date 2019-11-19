@@ -24,16 +24,12 @@ struct Question
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource , TableCellDelegate {
     @IBOutlet weak var progressView: UIProgressView!
     
-    
-    
-    
-    
     var questionsArray : [Question] = []
     var questionNumber = 0
     var currentQuestion : Question?
-    var answerChosenForCurrentQuestion : Int?
-    var someThingSeletced : Bool = false
     
+    
+    var someThingSeletced : Bool = false
     var score = 0.0
     
     @IBOutlet weak var currentQuestionLabel: UILabel!
@@ -44,10 +40,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //initial setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //get data from plist
         self.questionsArray = preLoadFromPlist(forResource: "sheetData", ofType: "plist")
-        
-        
         self.currentQuestion = questionsArray.randomElement()
         
         optionsTableView.delegate = self
@@ -57,31 +52,22 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
-    
-    
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         if(self.someThingSeletced)
         {
             
             if(self.questionNumber < 4)
             {
+                
                 self.currentQuestion =  self.questionsArray.randomElement()
                 self.updateUI()
                 self.questionNumber += 1
-                let timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
-                    
-                }
                 
             }else
             {
                 
                 self.performSegue(withIdentifier: "goToResult", sender: self)
-                self.questionNumber = 0
-                self.currentQuestion = nil
-                self.answerChosenForCurrentQuestion  = 0
-                self.someThingSeletced = false
                 
-                self.score = 0.0
             }
             
         }else
@@ -90,8 +76,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             self.performSegue(withIdentifier: "goToError", sender: self)
         }
         
-        
-        
     }
     
     func updateUI()
@@ -99,12 +83,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         self.progressView.progress = Float(self.questionNumber+2)/5.0
         self.optionsTableView.reloadData()
-        
         self.someThingSeletced = false
     }
+    func didTapOption(correctOption: Bool) {
+          
+        if(correctOption)
+        {
+            self.score += 1
+            print(score)
+        }
+          self.someThingSeletced = true
+      }
     
     
-    // pre-load data from plist for Books
+    // pre-load data from plist for Questions
     func preLoadFromPlist(forResource: String, ofType: String) -> [Question] {
         var preLoadcounter : Int = 0
         var localArray : [Question] = []
@@ -149,14 +141,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier:  "tableCell") as! TableViewCell
         
         cell.setOption(optionText: (self.currentQuestion?.options[indexPath.row])!, optionIndex: indexPath.row)
         
         cell.delegate = self
-        //        print(cell)
+        cell.question = self.currentQuestion!
         
         self.questionNumberLabel.text = "Question \(self.questionNumber + 1)"
         
@@ -164,16 +154,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
     
-    func didTapOption(optionIndex: Int) {
-        self.answerChosenForCurrentQuestion = optionIndex
-        self.someThingSeletced = true
-        //        print(optionIndex)
-        
-        if(self.answerChosenForCurrentQuestion == self.currentQuestion?.answerKey)
-        {
-            score += 1
-        }
-    }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult"
@@ -181,11 +162,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             print("Going to Results")
             let segueDestination = segue.destination as! ResultViewController
             segueDestination.score = self.score
+            
+            self.questionNumber = 0
+            self.currentQuestion = nil
+            self.someThingSeletced = false
+            self.score = 0.0
         }
         //goToError
         if segue.identifier == "goToError"
         {
-            print("Going to Error")
+            let segueDestination = segue.destination as! ErrorViewController
             
         }
     }
