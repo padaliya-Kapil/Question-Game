@@ -27,6 +27,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var questionsArray : [Question] = []
     var questionNumber = 0
     var currentQuestion : Question?
+    var scoreTracker :[Int : Bool] = [:]
     
     
     var someThingSeletced : Bool = false
@@ -89,8 +90,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
           
         if(correctOption)
         {
-            self.score += 1
-            print(score)
+            self.scoreTracker[self.questionNumber] = correctOption
         }
           self.someThingSeletced = true
       }
@@ -154,19 +154,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
     
-  
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult"
         {
             print("Going to Results")
             let segueDestination = segue.destination as! ResultViewController
-            segueDestination.score = self.score
             
-            self.questionNumber = 0
-            self.currentQuestion = nil
-            self.someThingSeletced = false
-            self.score = 0.0
+            
+            for (key,value) in self.scoreTracker
+            {
+                if(value)
+                {
+                    self.score += 1
+                    print(key,value)
+                }
+            }
+            
+            segueDestination.score = self.score
         }
         //goToError
         if segue.identifier == "goToError"
