@@ -66,17 +66,33 @@
 			children = (
 				C9706EA423837C4F003ED8DA /* AppDelegate.swift */,
 				C9706EA623837C4F003ED8DA /* SceneDelegate.swift */,
-				C9706EA823837C4F003ED8DA /* ViewController.swift */,
-				C9706EAA23837C4F003ED8DA /* Main.storyboard */,
-				C9706EBE2383E156003ED8DA /* ErrorViewController.swift */,
-				C9706EBC2383C104003ED8DA /* ResultViewController.swift */,
+				C9706EC023842A63003ED8DA /* Controller */,
+				C9706EC123842A8B003ED8DA /* View */,
 				C9706EAD23837C50003ED8DA /* Assets.xcassets */,
 				C9706EAF23837C50003ED8DA /* LaunchScreen.storyboard */,
 				C9706EB223837C50003ED8DA /* Info.plist */,
 				C9706EB823837DA9003ED8DA /* sheetData.plist */,
-				C9706EBA2383859B003ED8DA /* TableViewCell.swift */,
 			);
 			path = "Question-Game";
+			sourceTree = "<group>";
+		};
+		C9706EC023842A63003ED8DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C9706EA823837C4F003ED8DA /* ViewController.swift */,
+				C9706EBE2383E156003ED8DA /* ErrorViewController.swift */,
+				C9706EBC2383C104003ED8DA /* ResultViewController.swift */,
+				C9706EBA2383859B003ED8DA /* TableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C9706EC123842A8B003ED8DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C9706EAA23837C4F003ED8DA /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

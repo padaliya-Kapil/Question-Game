@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hcp-BV-ob8">
-    <device id="retina6_5" orientation="portrait" appearance="dark"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -127,16 +127,53 @@
         <scene sceneID="S0L-Vo-9H8">
             <objects>
                 <viewController id="h1m-o0-GSd" customClass="ErrorViewController" customModule="Question_Game" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kEN-CO-m1e">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="kEN-CO-m1e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7P-Jw-9S5">
+                                <rect key="frame" x="87" y="301" width="240" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLE-ns-C7N">
+                                        <rect key="frame" x="10" y="200" width="220" height="30"/>
+                                        <color key="backgroundColor" name="buttonColor"/>
+                                        <state key="normal" title="Ok">
+                                            <color key="titleColor" name="textColor1"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okay:" destination="h1m-o0-GSd" eventType="touchUpInside" id="uuN-RI-vst"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="homScreenBack"/>
+                                <constraints>
+                                    <constraint firstItem="HLE-ns-C7N" firstAttribute="leading" secondItem="h7P-Jw-9S5" secondAttribute="leading" constant="10" id="3AH-cg-xNF"/>
+                                    <constraint firstAttribute="height" constant="240" id="B9D-6S-Cq2"/>
+                                    <constraint firstAttribute="trailing" secondItem="HLE-ns-C7N" secondAttribute="trailing" constant="10" id="Gzh-i4-g5a"/>
+                                    <constraint firstAttribute="bottom" secondItem="HLE-ns-C7N" secondAttribute="bottom" constant="10" id="Trh-2Q-mxn"/>
+                                    <constraint firstAttribute="width" constant="240" id="bOw-AE-m06"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select an option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zin-Nq-cUA">
+                                <rect key="frame" x="118.66666666666669" y="410.66666666666669" width="177" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="textColor1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88247627019882202" green="0.89000588655471802" blue="0.90196305513381958" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="h7P-Jw-9S5" firstAttribute="centerY" secondItem="kEN-CO-m1e" secondAttribute="centerY" id="Dwe-Ym-wN8"/>
+                            <constraint firstItem="zin-Nq-cUA" firstAttribute="centerX" secondItem="kEN-CO-m1e" secondAttribute="centerX" id="TRK-Fv-k6R"/>
+                            <constraint firstItem="zin-Nq-cUA" firstAttribute="centerY" secondItem="kEN-CO-m1e" secondAttribute="centerY" id="u8i-Ku-ew4"/>
+                            <constraint firstItem="h7P-Jw-9S5" firstAttribute="centerX" secondItem="kEN-CO-m1e" secondAttribute="centerX" id="vSX-dL-F8d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sAp-8y-4Xa"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZg-4d-aDj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="804"/>
+            <point key="canvasLocation" x="1086.9565217391305" y="803.57142857142856"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="cYs-5u-FB5">

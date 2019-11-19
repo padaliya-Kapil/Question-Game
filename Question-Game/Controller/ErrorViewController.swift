@@ -17,6 +17,10 @@ class ErrorViewController: UIViewController {
     }
     
 
+    @IBAction func okay(_ sender: UIButton) {
+        
+        self.dismiss(animated: false, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

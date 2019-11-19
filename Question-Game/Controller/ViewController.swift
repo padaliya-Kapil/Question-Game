@@ -86,7 +86,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             
         }else
         {
-            print("Implement pop-up")
+            
+            self.performSegue(withIdentifier: "goToError", sender: self)
         }
         
         
@@ -100,10 +101,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.optionsTableView.reloadData()
         
         self.someThingSeletced = false
-        //    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()
-        //                   + .milliseconds(800)) {
-        //
-        //        }
     }
     
     
@@ -184,6 +181,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             print("Going to Results")
             let segueDestination = segue.destination as! ResultViewController
             segueDestination.score = self.score
+        }
+        //goToError
+        if segue.identifier == "goToError"
+        {
+            print("Going to Error")
+            
         }
     }
     
