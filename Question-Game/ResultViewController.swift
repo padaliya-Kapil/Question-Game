@@ -14,15 +14,25 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        getLabelText(score: self.score!)
+        print(score)
+    }
+    
+    func getLabelText(score : Double) -> String
+    {
+        switch score {
+        case 0...2:
+            return "Please try Again"
+        case 3:
+            return "Good job!"
+        case 4:
+            return "Excellent work!"
+        default:
+            return "You are a genius!"
+                
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-   
-    */
 
 }

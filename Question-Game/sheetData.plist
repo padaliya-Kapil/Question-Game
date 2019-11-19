@@ -7,44 +7,44 @@
 		<key>New item</key>
 		<dict>
 			<key>answerKey</key>
+			<integer>0</integer>
+			<key>options</key>
+			<array>
+				<string>Bell</string>
+				<string>Molly</string>
+				<string>St.Edward</string>
+				<string>None of these</string>
+			</array>
+			<key>question</key>
+			<string>Who invented the telephone?</string>
+		</dict>
+		<key>New item - 2</key>
+		<dict>
+			<key>answerKey</key>
 			<integer>2</integer>
 			<key>options</key>
 			<array>
-				<string>Encapsulation</string>
-				<string>Polymorphism</string>
-				<string>Abstraction</string>
-				<string>Inheritance</string>
+				<string>Thumb</string>
+				<string>Pinkie</string>
+				<string>Middle</string>
+				<string>Toe</string>
 			</array>
 			<key>question</key>
-			<string>A process that involves recognizing and focusing on the important characteristics of a situation or object is known as:</string>
+			<string>Which nail grows fastest?</string>
 		</dict>
-		<key>New item - 2</key>
+		<key>New item - 3</key>
 		<dict>
 			<key>answerKey</key>
 			<integer>1</integer>
 			<key>options</key>
 			<array>
-				<string>An object is what classes instantiated are from</string>
-				<string>An object is an instance of a class</string>
-				<string>An object is a variable</string>
-				<string>An object is not an instance of a class.</string>
+				<string>100 Db</string>
+				<string>100 C</string>
+				<string>100 K</string>
+				<string>100 F</string>
 			</array>
 			<key>question</key>
-			<string>Which statement is true regarding an object?</string>
-		</dict>
-		<key>New item - 3</key>
-		<dict>
-			<key>answerKey</key>
-			<integer>0</integer>
-			<key>options</key>
-			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
-			</array>
-			<key>question</key>
-			<string>What is  swift3?</string>
+			<string>What temperature does water boil at?</string>
 		</dict>
 		<key>New item - 4</key>
 		<dict>
@@ -52,55 +52,55 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Fleming</string>
+				<string>Darwin</string>
+				<string>Seth Rogen</string>
+				<string>Einstein</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift4?</string>
+			<string>Who discovered penicillin?</string>
 		</dict>
 		<key>New item - 5</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Dali</string>
+				<string>Shakespeare</string>
+				<string>Anonymous</string>
+				<string>Kalidas</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift5?</string>
+			<string>Who wrote Lazarillo de Tormes?</string>
 		</dict>
 		<key>New item - 6</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Brasilia</string>
+				<string>Rome</string>
+				<string>Barcelona</string>
+				<string>Madrid</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift6?</string>
+			<string>Where was Lope de Vega born? </string>
 		</dict>
 		<key>New item - 7</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>1911</string>
+				<string>1914</string>
+				<string>1922</string>
+				<string>1906</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift7?</string>
+			<string>When did the First World War start?</string>
 		</dict>
 		<key>New item - 8</key>
 		<dict>
@@ -108,13 +108,13 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Polish</string>
+				<string>German</string>
+				<string>French</string>
+				<string>Austrian</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift8?</string>
+			<string>What nationality was Chopin?</string>
 		</dict>
 		<key>New item - 9</key>
 		<dict>
@@ -122,13 +122,13 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Van Gogh</string>
+				<string>Picasso</string>
+				<string>Dali</string>
+				<string>None of these</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift9?</string>
+			<string>Who cut Van Gogh’s ear?</string>
 		</dict>
 		<key>New item - 10</key>
 		<dict>
@@ -136,41 +136,41 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Da Vinci</string>
+				<string>Patricia</string>
+				<string>Picasso</string>
+				<string>Stephen King</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift10?</string>
+			<string>Who painted the Mona Lisa? </string>
 		</dict>
 		<key>New item - 11</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>36</string>
+				<string>37</string>
+				<string>12</string>
+				<string>42</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift11?</string>
+			<string>How many dots are there on two dice?</string>
 		</dict>
 		<key>New item - 12</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Adolf Hitler</string>
+				<string>Shakespear</string>
+				<string>St Patrick</string>
+				<string>Cela</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift12?</string>
+			<string>Who wrote La Colmena?</string>
 		</dict>
 		<key>New item - 13</key>
 		<dict>
@@ -178,55 +178,55 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Italy</string>
+				<string>Spain</string>
+				<string>Germany</string>
+				<string>Britain</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift13?</string>
+			<string>Where are the Dolomites?</string>
 		</dict>
 		<key>New item - 14</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Beijing</string>
+				<string>Nairobi</string>
+				<string>Delhi</string>
+				<string>Toronto</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift14?</string>
+			<string>What’s the capital of Kenya?</string>
 		</dict>
 		<key>New item - 15</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Indian Ocean</string>
+				<string>Red Sea</string>
+				<string>Atlantic</string>
+				<string>Pacific</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift15?</string>
+			<string>Which is the largest ocean? </string>
 		</dict>
 		<key>New item - 16</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Black</string>
+				<string>White</string>
+				<string>Toss</string>
+				<string>Last winner</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift16?</string>
+			<string>Who starts first in chess? </string>
 		</dict>
 		<key>New item - 17</key>
 		<dict>
@@ -234,27 +234,27 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Greece</string>
+				<string>Spain</string>
+				<string>Poland</string>
+				<string>Guam Islands</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift17?</string>
+			<string>Where was El Greco born?</string>
 		</dict>
 		<key>New item - 18</key>
 		<dict>
 			<key>answerKey</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Brad Pitt</string>
+				<string>Sean Paul</string>
+				<string>Samuel L Jackson</string>
+				<string>None of these</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift18?</string>
+			<string>Who did Madonna marry?</string>
 		</dict>
 		<key>New item - 19</key>
 		<dict>
@@ -262,13 +262,13 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Red-Blue</string>
+				<string>Blue-Green</string>
+				<string>Red-Black</string>
+				<string>Red-Black</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift19?</string>
+			<string>What colours make purple?</string>
 		</dict>
 		<key>New item - 20</key>
 		<dict>
@@ -276,13 +276,13 @@
 			<integer>0</integer>
 			<key>options</key>
 			<array>
-				<string>Option1</string>
-				<string>Option2</string>
-				<string>Option3</string>
-				<string>Option4</string>
+				<string>Diamond</string>
+				<string>Gold</string>
+				<string>Aluminium</string>
+				<string>Emarald</string>
 			</array>
 			<key>question</key>
-			<string>What is  swift20?</string>
+			<string>What’s the hardest rock?</string>
 		</dict>
 	</dict>
 </dict>
